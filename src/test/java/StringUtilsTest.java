@@ -44,7 +44,7 @@ public class StringUtilsTest {
         assertFalse(su.are2CharsAtHeadAndTailEqual("1"));
     }
 
-    //===========File Test============
+    //===========File JUnit_Tests============
 
     @Test
     public void testBubbleSort(){
@@ -53,8 +53,20 @@ public class StringUtilsTest {
 
         JUnit_Tests.bubbleSort(arr);
         assertArrayEquals(expected, arr);
-        //assertEquals(new User("Tom", 24), new User("Tom", 24));
     }
+
+    @Test(expected = NullPointerException.class) //ловим возможное исключение
+    public void testBubbleSort_2(){
+        int[] arr = {4,12,-17,3};
+        //int[] arr = null; //Error case
+        int[] expected = {-17,3,4,12};
+
+        JUnit_Tests.bubbleSort(arr);
+        assertArrayEquals(expected, arr);
+    }
+
+
+    //============== Before / After ===============
 
     User Tom = new User("Tom", 24);
 
