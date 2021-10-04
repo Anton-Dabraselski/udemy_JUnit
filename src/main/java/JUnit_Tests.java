@@ -1,8 +1,10 @@
 public class JUnit_Tests {
     public static void main(String[] args) {
         int a = 10;
-        assert a == 10;
+        //assert a == 10;
 
+        Class clazz = JUnit_Tests.class;
+        System.out.println(clazz.getModifiers());
     }
 
     public static void bubbleSort(int[] arr) {
